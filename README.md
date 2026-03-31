@@ -1,31 +1,27 @@
 # Practical lesson pz-SOLID  
 # Практична реалізація SOLID принципів  
 
-> У цьому занятті студенти отримують практичні навички застосування SOLID принципів під час рефакторингу існуючого коду.  
-> Мета — створити гнучку, масштабовану та чисту архітектуру шляхом застосування SRP, OCP, LSP, ISP та DIP.
+> У цьому занятті отримано практичні навички застосування SOLID принципів під час рефакторингу існуючого коду з метою створити гнучку, масштабовану та чисту архітектуру шляхом застосування SRP, OCP, LSP, ISP та DIP.
 
 ---
 
 ## What need to do:
-* Провести аналіз вихідного «анти-SOLID» коду  
-* Визначити порушення кожного SOLID принципу  
-* Виконати рефакторинг згідно з:
+* Проведено аналіз вихідного «анти-SOLID» коду  
+* Визначено порушення кожного SOLID принципу  
+* Виконано рефакторинг згідно з:
   * SRP — Single Responsibility Principle  
   * OCP — Open/Closed Principle  
   * LSP — Liskov Substitution Principle  
   * ISP — Interface Segregation Principle  
   * DIP — Dependency Inversion Principle  
-* Створити відповідні інтерфейси й абстракції  
-* Усунути зайві або циклічні залежності  
-* Додати мінімальний набір unit-тестів після рефакторингу  
+* Створено відповідні інтерфейси й абстракції  
+* Усунуті зайві або циклічні залежності  
 
 ---
 
 ## Acceptance criteria
-* Реалізація на мові Typescript 
-* Студент розуміє кожен SOLID принцип та пояснює його застосування  
-* Увесь вихідний код проаналізовано  
-* Усі порушення SOLID знайдено та описано  
+* Реалізовано на мові Typescript  
+* Увесь вихідний код проаналізовано   
 * Після рефакторингу:
   * Кожен клас має одну відповідальність (SRP)  
   * Код розширюється через нові класи, а не редагування існуючих (OCP)  
@@ -33,26 +29,76 @@
   * Інтерфейси невеликі й специфічні (ISP)  
   * Залежності реалізовані через абстракції (DIP)  
 * Код структурований, логічний та зрозумілий  
-* Усі тести проходять успішно  
 * Звіт оформлений у Markdown (README.md)
 
 ## Directory Structure
 ```
-├── pz-SOLID
-│   ├── src
-│   │   ├── original          # код із навмисними порушеннями SOLID
-│   │   ├── refactored        # код після рефакторингу
-│   │   ├── interfaces        # абстракції та інтерфейси
-│   ├── tests
-│   │   ├── refactored.spec.js
-│   ├── .editorconfig
-│   ├── .gitignore
-│   ├── jest.config.js
-│   ├── package.json
-│   ├── package-lock.json
-│   ├── README.md
-└──
+
+src/
+├── S-SRP/
+│   ├── original/           Код з порушеннями SRP
+│   ├── refactored/         Рефакторений код
+│   └── interfaces/         Інтерфейси та абстракції
+│
+├── O-OCP/
+│   ├── original/           Код з порушеннями OCP
+│   ├── refactored/         Рефакторений код
+│   └── interfaces/         Інтерфейси та абстракції
+│
+├── L-LSP/
+│   ├── original/           Код з порушеннями LSP
+│   ├── refactored/         Рефакторений код
+│   └── interfaces/         Інтерфейси та абстракції
+│
+├── I-ISP/
+│   ├── original/           Код з порушеннями ISP
+│   ├── refactored/         Рефакторений код
+│   └── interfaces/         Інтерфейси та абстракції
+│
+├── D-DIP/
+│   ├── original/           Код з порушеннями DIP
+│   ├── refactored/         Рефакторений код
+│   └── interfaces/         Інтерфейси та абстракції
+│
+└── examples/
+    ├── srpExample.ts       Приклад SRP
+    ├── ocpExample.ts       Приклад OCP
+    ├── lspExample.ts       Приклад LSP
+    ├── ispExample.ts       Приклад ISP
+    ├── dipExample.ts       Приклад DIP
+    └── index.ts            Запуск всіх прикладів
+
 ```
+
+## Порядок запуску
+
+### Встановлення і налаштування
+
+1. **Встановіть залежності:**
+   ```bash
+   npm install
+   ```
+
+2. **Перевірте, що TypeScript встановлений:**
+   ```bash
+   npx tsc --version
+   ```
+
+### Запуск прикладів
+
+**Для запуску всіх прикладів SOLID принципів:**
+```bash
+npx ts-node src/examples/index.ts
+```
+
+**Для запуску конкретного принципу:**
+- SRP: `npx ts-node src/examples/srpExample.ts`
+- OCP: `npx ts-node src/examples/ocpExample.ts`
+- LSP: `npx ts-node src/examples/lspExample.ts`
+- ISP: `npx ts-node src/examples/ispExample.ts`
+- DIP: `npx ts-node src/examples/dipExample.ts`
+
+---
 
 ## Useful links
 
@@ -65,7 +111,3 @@
 [Clean Code Concepts Adapted for JavaScript](https://github.com/ryanmcdermott/clean-code-javascript)
 
 [Dependency Injection in JavaScript](https://javascript.plainenglish.io/dependency-injection-in-javascript-1b82a8101c1a)
-
-
-
-
